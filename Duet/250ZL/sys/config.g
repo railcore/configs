@@ -18,7 +18,7 @@ G90                                 ; Send absolute coordinates...
 M83                                 ; ...but relative extruder moves
 
 ; Axis and motor configuration
-M584 Z5:6:7                         ; Z steppers are 5 (front left) 6(rear left) 7(right) on the duex5
+M584 X0 Y1 Z5:6:7 E2:3:4:8:9 ; Map Z to drivers 5, 6, 7 ; Define unused drivers 3,4,8 and 9 as extruders
 M667 S1                             ; CoreXY mode
 M569 P0 S0                          ; Drive 0 goes backwards (change to S1 to reverse it)
 M569 P1 S1                          ; Drive 1 goes forwards
@@ -32,13 +32,14 @@ M569 P7 S0                          ; Drive 7 goes backwards
 ;Leadscrew locations
 M671 X-10:-10:273  Y24:228:122 S7.5 ; Calibrated Front left, Rear Left, Right  S7.5 is the max correction
 
+
 M350 X16 Y16 Z16 E16 I1             ; set 16x microstepping for axes& extruder, with interpolation
 ; Sensorless Homing
 M574 X1 Y1 S3                       ; set sensorless homing for X/Y
 M574 Z0 S0                          ; set sensored homing for Z( z at max)
 ; Endstop Switch Homing
 ; M574 X1 Y1 Z0 S0                  ; set homing switch configuration (x,y at min, z at max)
-M906 X900 Y900 Z800 E900 I60        ; Set motor currents (mA)
+M906 X1000 Y1000 Z1000 E700 I60 ; Set motor currents (mA)
 M201 X3000 Y3000 Z20 E1000          ; Accelerations (mm/s^2)
 M203 X24000 Y24000 Z900 E3600       ; Maximum speeds (mm/min)
 M566 X1000 Y1000 Z30 E20            ; Maximum jerk speeds mm/minute
