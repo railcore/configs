@@ -32,7 +32,7 @@ M671 X-10:-10:333  Y22.5:277.5:150 S7.5  ;Front left, Rear Left, Right  S7.5 is 
 
 M350 X16 Y16 Z16 E16 I1	    ; set 16x microstepping for axes& extruder, with interpolation
 M574 X1 Y1 Z0 S1		    ; set homing switch configuration (x,y at min, z at max) IF YOU NEED TO REVERSE YOUR HOMING SWITCHES CHANGE S1 to S0
-M906 X1250 Y1250 Z1000 E1250 I60	    ; Set motor currents (mA)
+M906 X1400 Y1400 Z1000 E1250 I60	    ; Set motor currents (mA)
 M201 X3000 Y3000 Z20 E1000          ; Accelerations (mm/s^2)
 M203 X24000 Y24000 Z900 E3600      ; Maximum speeds (mm/min)
 M566 X1000 Y1000 Z30 E20            ; Maximum jerk speeds mm/minute
