@@ -5,9 +5,9 @@
 
 G91                       ; relative mode
 G1 Z5 S2 F400
-G1 S1 X-280 Y-240 F1200   ; course home X or Y
-G1 S1 X-240               ; course home X
-G1 S1 Y-240               ; course home Y
+G1 S1 X-320 Y-320 F3000   ; course home X or Y
+G1 S1 X-320               ; course home X
+G1 S1 Y-320               ; course home Y
 G1 X4 Y4 F1200             ; move away from the endstops
 G1 S1 X-10                ; fine home X
 G1 S1 Y-10                ; fine home Y
@@ -25,7 +25,7 @@ G90                       ; back to absolute mode
 G91
 G1 Z4 F200 S2
 G90
-G1 X120 Y120 F6000
+G1 X150 Y150 F6000
 G30
 ; This file leaves the head at the zprobe trigger height so that you can slip a piece of paper under it and then do G0 Z0 to check the height.
 ; If you prefer to send the printer to X0Y0Z0, un-comment the following lines
