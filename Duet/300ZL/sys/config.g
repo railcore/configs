@@ -74,9 +74,6 @@ G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own valu
 ;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02  
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
 
-;*** If you are using axis compensation, put the figures in the following command
-;M556 S78 X0 Y0 Z0                   	; Axis compensation here
-
 M208 S1 Z-0.2				; set minimum Z
 ;
 T0					; select first hot end
