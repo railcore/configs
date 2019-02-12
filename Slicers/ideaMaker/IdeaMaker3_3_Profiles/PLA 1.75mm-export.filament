@@ -1,0 +1,19 @@
+{
+    "header": {
+        "filament_id": "57688144-7bad-49b6-835e-b83b28908446",
+        "filament_name": "PLA 1.75mm"
+    },
+    "override_slice_settings": false,
+    "settings": {
+        "filament_brand": "Generic",
+        "filament_density": 1240,
+        "filament_diameter": 1.7200000286102295,
+        "filament_display_name": "PLA",
+        "filament_flowrate": 100,
+        "filament_notes": "",
+        "filament_price": 30
+    },
+    "slice_settings": {
+    },
+    "version": 1
+}
