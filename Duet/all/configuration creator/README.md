@@ -1,6 +1,6 @@
  How to use the Railcore Duet configurator
  
- * go to the old/v1 official RepRapFirmware Configuration Tool
+ * go to the old/v1 [official RepRapFirmware Configuration Tool](https://configurator.reprapfirmware.org/v1/)
  * select “use existing configuration”
  * it'll prompt to upload a file, point it to the “railcore-config.json” file you saved.
  * Go through the configurator with many pre-set values for the Railcore 300ZL
