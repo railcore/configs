@@ -2,7 +2,7 @@
  
  * go to the old/v1 [official RepRapFirmware Configuration Tool](https://configurator.reprapfirmware.org/v1/)
  * select “use existing configuration”
- * it'll prompt to upload a file, point it to the “railcore-config.json” file you saved.
+ * it'll prompt to upload a file, point it to the “railcore-config.json” downloaded from this section.
  * Go through the configurator with many pre-set values for the Railcore 300ZL
 
 There are a few caveats at this time.
