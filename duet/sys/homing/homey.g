@@ -1,4 +1,5 @@
-; Omerod 2 Y homing file for dc42 Duet firmware
+; Home Y Axis
+
 G91
 G1 Z4 F200 S2
 G1 Y-320 F3000 S1
