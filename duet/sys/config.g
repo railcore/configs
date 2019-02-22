@@ -8,9 +8,9 @@ M550 PRailCore				; Machine name and Netbios name (can be anything you like)
 M98 P"wifi.g"                           ; Run WiFi configuration file.
 M552 P0.0.0.0                           ; Use DHCP
 
-M586 P0 S1           		        ; Enable HTTP
-M586 P1 S0        		        ; Disable FTP
-M586 P2 S0 				; Disable Telnet
+;M586 P0 S1           		        ; Enable HTTP (default) S0 to disable
+;M586 P1 S0        		        ; Disable FTP (default) S1 to enable
+;M586 P2 S0 				; Disable Telnet (default) S1 to enable
 
 M555 P2                           	; Set output to look like Marlin
 M575 P1 B57600 S1			; Comms parameters for PanelDue
