@@ -1,10 +1,11 @@
 ; Configuration file for RailcoreII 300ZL or ZLT Printer
-; Communication and general
+; Debugging
 M111 S0                             	; Debug off
 M929 P"eventlog.txt" S1			; start logging to file eventlog.txt
 
 M550 P"RailCore"				; Machine name and Netbios name (can be anything you like)
 ;M551 P"myrap"                        	; Machine password (used for FTP)
+
 M98 P"wifi.g"                           ; Run WiFi configuration file.
 M552 P0.0.0.0                           ; Use DHCP
 
@@ -12,6 +13,7 @@ M552 P0.0.0.0                           ; Use DHCP
 ;M586 P1 S0        		        ; Disable FTP (default) S1 to enable
 ;M586 P2 S0 				; Disable Telnet (default) S1 to enable
 
+; General preferences
 M555 P2                           	; Set output to look like Marlin
 M575 P1 B57600 S1			; Comms parameters for PanelDue
 
@@ -22,19 +24,21 @@ M83                                 	; ...but relative extruder moves
 ; Axis and motor configuration
 M667 S1					; CoreXY mode
 
-M584 X0 Y1 Z5:6:7 E3:4:8:9 		; Map Z to drivers 5, 6, 7. Define unused drivers 3,4,8 and 9 as extruders
-M569 P0 S0 				; Drive 0 goes backwards (change to S1 to reverse it) X stepper
-M569 P1 S1 				; Drive 1 goes forwards	Y Stepper
-M569 P2 S1 				; Drive 2 goes forwards		Unused
-M569 P3 S1 				; Extruder (Drive 3) S1 for Bondtech, S0 for Titan 
-M569 P4 S1 				; Drive 4 goes forwards		Extruder (unused)
-M569 P5 S0 				; Drive 5 goes backwards	Front Left Z
-M569 P6 S0 				; Drive 6 goes backwards	Rear Left Z
-M569 P7 S0 				; Drive 7 goes backwards	Right Z
+; Drives
+M584 X0 Y1 Z5:6:7 E3:4:8:9  ; Map Z to drivers 5, 6, 7. Define unused drivers 3,4,8 and 9 as extruders
+M569 P0 S0                  ; Drive 0 goes forwards (change to S0 to reverse it)| X stepper
+M569 P1 S1                  ; Drive 1 goes backwards(change to S1 to reverse it)| Y Stepper
+M569 P2 S1                  ; Drive 2 goes forwards                             | Unused
+M569 P3 S1                  ; Drive 3 goes forwards                             | Extruder S1 for Bondtech, S0 for Titan 
+M569 P4 S1                  ; Drive 4 goes forwards                             | Extruder (unused) 
+M569 P5 S0                  ; Drive 5 goes backwards                            | Front Left Z
+M569 P6 S0                  ; Drive 6 goes backwards                            | Rear Left Z
+M569 P7 S0                  ; Drive 7 goes backwards                            | Right Z
 
 ;Leadscrew locations
-M671 X-10:-10:333  Y22.5:277.5:150 S7.5 ;Front left, Rear Left, Right  S7.5 is the max correction - measure your own offsets, to the bolt for the yoke of each leadscrew
+M671 X-10:-10:333 Y22.5:277.5:150 S7.5 ;Front left,(-10,22.5) Rear Left (-10.,227.5) , Right (333,160) S7.5 is the max correction - measure your own offsets, to the bolt for the yoke of each leadscrew
 
+; Axis and motor configuration
 M350 X16 Y16 Z16 E16 I1			; set 16x microstepping for axes& extruder, with interpolation
 M574 X1 Y1 Z0 S1			; set homing switch configuration (x,y at min, z at max) IF YOU NEED TO REVERSE YOUR HOMING SWITCHES CHANGE S1 to S0
 M906 X1000 Y1000 Z1000 E700 I60	 	; Set motor currents (mA)
@@ -49,7 +53,7 @@ M92 X200 Y200 Z1600 E837 		; steps/mm, X/Y may be more around 201.5 for accuracy
 M305 P0 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
 M305 P1 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
-
+;Heaters
 M307 H1 A270.7 C90.4 D6.7 B0 S1.0	; Heater 1 model
 M570 S360				; Hot end may be a little slow to heat up so allow it 360 seconds
 M143 S285 				; Maximum heater temperature
