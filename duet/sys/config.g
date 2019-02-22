@@ -3,9 +3,6 @@
 M111 S0                             	; Debug off
 M550 PRailCore				; Machine name and Netbios name (can be anything you like)
 ;M551 Pmyrap                        	; Machine password (used for FTP)
-;*** If you have more than one Duet on your network, they must all have different MAC addresses, so change the last digits
-M540 P0xBE:0xEF:0xDE:0xAD:0xFE:0xEE 	; MAC Address
-
 M98 P"wifi.g"                           ; Run WiFi configuration file.
 
 M555 P2                           	; Set output to look like Marlin
