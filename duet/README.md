@@ -12,6 +12,7 @@
 * The first line of each gcode file shall be a comment detailing exactly what the file deals with.  e.g.
 
   `; Probing configuration for Precision Piezo Orion Z-Probe`
+* All string P-parameters shall be quoted, i.e. `M98 P"wifi.g"`
 
 ### macros
 
