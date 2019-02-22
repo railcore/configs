@@ -1,6 +1,8 @@
 ; Configuration file for RailcoreII 300ZL or ZLT Printer
 ; Communication and general
 M111 S0                             	; Debug off
+M929 P"eventlog.txt" S1			; start logging to file eventlog.txt
+
 M550 PRailCore				; Machine name and Netbios name (can be anything you like)
 ;M551 Pmyrap                        	; Machine password (used for FTP)
 M98 P"wifi.g"                           ; Run WiFi configuration file.
