@@ -2,9 +2,10 @@
 ; Debugging
 M111 S0                             	; Debug off
 M929 P"eventlog.txt" S1			; start logging to file eventlog.txt
-; General preferences
-M550 PRailCore				; Machine name and Netbios name (can be anything you like)
-;M551 Pmyrap                        	; Machine password (used for FTP)
+
+M550 P"RailCore"				; Machine name and Netbios name (can be anything you like)
+;M551 P"myrap"                        	; Machine password (used for FTP)
+
 M98 P"wifi.g"                           ; Run WiFi configuration file.
 M552 P0.0.0.0                           ; Use DHCP
 
