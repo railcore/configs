@@ -54,7 +54,7 @@ M305 P0 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set t
 M305 P1 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
 ;Heaters
-M307 H1 A270.7 C90.4 D6.7 B0 S1.0	; Heater 1 model
+; Heater model removed. You MUST run the bed and tool 0 heater tuning macros. See "Final Tuning" on P115 of the ZL build guide.
 M570 S360				; Hot end may be a little slow to heat up so allow it 360 seconds
 M143 S285 				; Maximum heater temperature
 
@@ -84,4 +84,5 @@ G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own valu
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
 
 M208 S1 Z-0.2				; set minimum Z
-T0					; select first hot end
+T0							; select first hot end
+M501 						; Load saved parameters from non-volatile memory
