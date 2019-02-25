@@ -3,7 +3,7 @@
 M111 S0                             	; Debug off
 M929 P"eventlog.txt" S1			; start logging to file eventlog.txt
 
-M550 P"RailCore"				; Machine name and Netbios name (can be anything you like)
+M550 P"RailCore"			; Machine name and Netbios name (can be anything you like)
 ;M551 P"myrap"                        	; Machine password (used for FTP)
 
 M98 P"wifi.g"                           ; Run WiFi configuration file.
@@ -77,6 +77,7 @@ G10 P0 S0 R0                        	; Set tool 0 operating and standby temperat
 ;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
 M558 P1 X0 Y0 Z1			; Z probe is an IR probe and is not used for homing any axes
 G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own values here) 
+					; Tip: A larger trigger height in G31 moves you CLOSER to the bed
 
 ;BLTouch - leave commented out if using a IR Probe
 ;M307 H3 A-1 C-1 D-1
