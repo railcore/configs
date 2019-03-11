@@ -25,6 +25,6 @@ The Duet and Duex have a multitude of connection ports available.  Whenever poss
 
 | Port      | Purpose           |
 |-----------|-------------------|
-| X-Stepper | Front x/y stepper |
-| Y-Stepper | Rear x/y stepper  |
+| X-Stepper | Rear x/y stepper  |
+| Y-Stepper | Front x/y stepper |
 | E0        | Extruder Stepper  |
