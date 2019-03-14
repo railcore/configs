@@ -75,11 +75,12 @@ G10 P0 S0 R0                        	; Set tool 0 operating and standby temperat
 
 ; Z probe and compensation definition
 ;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
+;*** Comment out or remove if you are using a BL-touch
 M558 P1 X0 Y0 Z1			; Z probe is an IR probe and is not used for homing any axes
 G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own values here) 
 					; Tip: A larger trigger height in G31 moves you CLOSER to the bed
 
-;BLTouch - leave commented out if using a IR Probe
+;BLTouch - *** to activate remove the semi-colons, otherwise leave commented out if using a IR Probe
 ;M307 H3 A-1 C-1 D-1
 ;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02  
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
