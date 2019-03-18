@@ -1,4 +1,6 @@
 ; Configuration file for RailcoreII 300ZL or ZLT Printer
+; Minimum firmware version: 
+
 ; Debugging
 M111 S0                             	; Debug off
 M929 P"eventlog.txt" S1			; Start logging to file eventlog.txt
