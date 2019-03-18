@@ -22,7 +22,8 @@ G90                             	; Send absolute coordinates...
 M83                                 	; ...but relative extruder moves
 
 ; Axis and motor configuration
-M667 S1					; CoreXY mode
+M667 S1                                 ; CoreXY mode (deprecated in RRF 2.03 and later.)
+;M669 K1                                 ; CoreXY mode (RRF 2.03 and later)
 
 ; Drives
 M584 X0 Y1 Z5:6:7 E3:4:8:9  ; Map Z to drivers 5, 6, 7. Define unused drivers 3,4,8 and 9 as extruders
@@ -38,6 +39,7 @@ M569 P7 S0                  ; Drive 7 goes backwards                            
 ;Leadscrew locations
 M671 X-10:-10:333 Y22.5:277.5:150 S7.5 ;Front left,(-10,22.5) Rear Left (-10.,227.5) , Right (333,160) S7.5 is the max correction - measure your own offsets, to the bolt for the yoke of each leadscrew
 
+
 ; Axis and motor configuration
 M350 X16 Y16 Z16 E16 I1			; Set 16x microstepping for axes & extruder, with interpolation.
 M574 X1 Y1 Z0 S1			; Set homing switch configuration (x,y at min, z at max) IF YOU NEED TO REVERSE YOUR HOMING SWITCHES CHANGE S1 to S0
@@ -45,18 +47,24 @@ M906 X1000 Y1000 Z1000 E700 I60	 	; Set motor currents (mA)
 M201 X3000 Y3000 Z20 E1000 		; Accelerations (mm/s^2)
 M203 X24000 Y24000 Z900 E3600  		; Maximum speeds (mm/min)
 M566 X1000 Y1000 Z30 E20 		; Maximum jerk speeds mm/minute
-M208 X290 Y290 Z280 			; Set axis maxima and high homing switch positions (adjust to suit your machine)
-M208 X0 Y0 Z-0.5 S1 			; Set axis minima and low homing switch positions (adjust to make X=0 and Y=0 the edges of the bed)
 M92 X200 Y200 Z1600 E837 		; Steps/mm
+
+; Set conservative axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
+; M208 X0:240 Y0:240 Z-0.2:260          ; 250ZL
+M208 X0:290 Y0:290 Z-0.2:310            ; 300ZL
+; M208 X0:290 Y0:290 Z-0.2:580          ; 300ZLT
 
 ; Thermistors
 M305 P0 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
 M305 P1 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
 ;Heaters
-M307 H1 A270.7 C90.4 D6.7 B0 S1.0	; Heater 1 model
-M570 S360				; Hot end may be a little slow to heat up so allow it 360 seconds
-M143 S285 				; Maximum heater temperature
+; Default heater model in conservative settings.
+; Heater models should be in config-override.g , run tuning macros to have these created.
+M570 H1 P5 S360 T15                     ; Permitted temperature excursion 25C
+M143 S285                               ; Maximum heater temperature
+M570 S360				                ; Hot end may be a little slow to heat up so allow it 360 seconds
+M143 S285 				                ; Maximum heater temperature
 
 ; Fans
 M106 P0 H-1 				; Disable thermostatic mode for fan 0
@@ -90,5 +98,11 @@ G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own valu
 ;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02  
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
 
-M208 S1 Z-0.2				; set minimum Z
+; Project R3d modifications - uncomment if using a Project R3D kit
+; M98 P"projectr3d.g"
+
+; Conservative settings enabled during build and testing. When you are ready to remove this
+; simple protection, remove or comment out this line
+M98 P"conservative.g"
+
 T0					; select first hot end
