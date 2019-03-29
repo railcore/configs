@@ -22,7 +22,7 @@ G90                             	; Send absolute coordinates...
 M83                                 	; ...but relative extruder moves
 
 ; Axis and motor configuration
-M667 S1					; CoreXY mode
+M669 K1					; CoreXY mode
 
 ; Drives
 M584 X0 Y1 Z5:6:7 E3:4:8:9  ; Map Z to drivers 5, 6, 7. Define unused drivers 3,4,8 and 9 as extruders
