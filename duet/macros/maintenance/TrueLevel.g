@@ -1,4 +1,4 @@
-;File     : DisableAllMotors.g
+;File     : TrueLevel.g
 ;Effect   : Switches off extruders 1 and 2.
 ;Use-case : Time-saving macro. Performs 3 bed-levelling routines and homes in order to get the bed as level as possible.
 
