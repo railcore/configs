@@ -1,6 +1,6 @@
 ;File     : TrueLevel.g
-;Effect   : Switches off extruders 1 and 2.
-;Use-case : Time-saving macro. Performs 3 bed-levelling routines and homes in order to get the bed as level as possible.
+;Effect   : Homes, performs 3 bed-levelling routines and homes again.
+;Use-case : Time-saving macro, in order to get the bed as level as possible and homed.
 
 M561     ; Clear bed transforms
 G28 Z    ; Home Z
