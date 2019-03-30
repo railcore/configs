@@ -1,6 +1,8 @@
-; Function test to test each component in isolation, then as a system, at very low rates of speed.
+; Function test to test each motion component in isolation, then as a system,
+; at very low rates of speed.
 ; The user is prompted with expected behavior before each move.
-; If any motion does not move as expected, either unplug the machine or hit cancel at the next prompt.
+; If any motion does not move as expected, either unplug the machine or hit
+; cancel at the next prompt.
 ; Resolve any errors then run this test again from the top.
 
 M84; disable motors to allow manual movement
