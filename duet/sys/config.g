@@ -54,7 +54,7 @@ M305 P0 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to
 M305 P1 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
 ;Heaters
-M307 H1 A270.7 C90.4 D6.7 B0 S1.0       ; Heater 1 model
+
 M570 S360                               ; Hot end may be a little slow to heat up so allow it 360 seconds
 M143 S285                               ; Maximum heater temperature
 
@@ -95,4 +95,5 @@ T0                                      ; select first hot end
 
 ; Conservative settings enabled during build and testing. When you are ready to remove this
 ; simple protection, remove or comment out this line
-; M98 P"conservative.g
+; M98 P"conservative.g"
+M501                                    ; Load saved parameters from non-volatile memory
