@@ -92,3 +92,7 @@ G31 X0 Y30 Z2.00 P500                   ; Set the zprobe height and threshold (p
 
 M208 S1 Z-0.2                           ; set minimum Z
 T0                                      ; select first hot end
+
+; Conservative settings enabled during build and testing. When you are ready to remove this
+; simple protection, remove or comment out this line
+; M98 P"conservative.g
