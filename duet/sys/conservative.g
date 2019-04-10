@@ -7,6 +7,11 @@ M566 X500 Y500 Z15 E10        ; Maximum jerk speeds mm/minute
 M307 H0 A270.7 C90.4 D6.7 B0 S1.0          ; Default Bed Heater Parameters, before tuning
 M307 H1 A508.1 C249.0 D3.8 S1.00 V24.2 B0  ; Default Tool Heater Parameters, before tuning
 
-M558 H10 F50 T3000	; Z probe
-                    ; Dive height (H8). Speeds 
-                    ; (Probe - F50, travel - T3000).
+M558 H10 F50 T3000 ; Z probe
+                   ; H10 - dive height
+                   ; F50 - probing speed
+                   ; T3000 - travel speed between probe points
+                   ; Bigger dive height prevents a situation where the bed is offset by more than the dive height
+                   ; on any corner during commissioning, crashing the hot-end.
+                   ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
+                   ; disconnects later after moving to a point)
