@@ -55,8 +55,9 @@ M305 P1 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to
 
 ;Heaters
 
-M570 S360                               ; Hot end may be a little slow to heat up so allow it 360 seconds
-M143 S285                               ; Maximum heater temperature
+M570 S360                                  ; Print will be terminated if a heater fault is not reset within 360 minutes.
+M143 H0 S120                               ; Maximum H0 (Bed) heater temperature
+M143 H1 S285                               ; Maximum H1 (Extruder) heater temperature
 
 ; Fans
 M106 P0 H-1                             ; Disable thermostatic mode for fan 0
