@@ -78,6 +78,7 @@ G10 P0 S0 R0                            ; Set tool 0 operating and standby tempe
 ;IR Probe or Switch
 ;*** Comment this section out (or remove) if you are NOT using an IR Probe or Switch
 ;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
+;*** Do not use the Fxxx parameter for M558 here, it is set in homez.g
 M558 P1 X0 Y0 Z1                        ; Z probe is an IR probe and is not used for homing any axes
 G31 X0 Y30 Z2.00 P500                   ; Set the zprobe height and threshold (put your own values here)
                                         ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
