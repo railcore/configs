@@ -45,8 +45,6 @@ M906 X1000 Y1000 Z1000 E700 I60         ; Set motor currents (mA)
 M201 X3000 Y3000 Z20 E1000              ; Accelerations (mm/s^2)
 M203 X24000 Y24000 Z900 E3600           ; Maximum speeds (mm/min)
 M566 X1000 Y1000 Z30 E20                ; Maximum jerk speeds mm/minute
-M208 X290 Y290 Z280                     ; Set axis maxima and high homing switch positions (adjust to suit your machine)
-M208 X0 Y0 Z-0.5 S1                     ; Set axis minima and low homing switch positions (adjust to make X=0 and Y=0 the edges of the bed)
 M92 X200 Y200 Z1600 E837                ; Steps/mm
 
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
