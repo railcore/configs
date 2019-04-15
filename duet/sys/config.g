@@ -49,6 +49,12 @@ M208 X290 Y290 Z280                     ; Set axis maxima and high homing switch
 M208 X0 Y0 Z-0.5 S1                     ; Set axis minima and low homing switch positions (adjust to make X=0 and Y=0 the edges of the bed)
 M92 X200 Y200 Z1600 E837                ; Steps/mm
 
+; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
+; These values are conservative to start with, adjust during commissioning.
+; M208 X0:230 Y0:230 Z-0.2:230          ; 250ZL
+M208 X0:280 Y0:280 Z-0.2:280            ; 300ZL
+; M208 X0:280 Y0:280 Z-0.2:580          ; 300ZLT
+
 ; Thermistors
 M305 P0 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to set the bed thermistor ADC correction
 M305 P1 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
@@ -94,7 +100,6 @@ G31 X0 Y30 Z2.00 P500                   ; Set the zprobe height and threshold (p
 ;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
 
-M208 S1 Z-0.2                           ; set minimum Z
 T0                                      ; select first hot end
 
 ; Conservative settings enabled during build and testing. When you are ready to remove this
