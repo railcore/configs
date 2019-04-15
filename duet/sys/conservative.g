@@ -4,9 +4,10 @@
 ;           of crashing the head into the bed or anything else and to ensure there is a heater model before tuning.
 
 ; Axis and motor configuration - slow down.
+M906 X400 Y400 Z400 E700 I60   ; Reduce motor currents (mA) - WARNING: May trigger stallguard (and prematurely during homing) if sensorless.
 M201 X1500 Y1500 Z10 E500      ; Reduce accelerations (mm/s^2)
-M203 X12000 Y12000 Z450 E1800   ; Reduce maximum speeds (mm/min)
-M566 X500 Y500 Z15 E10        ; Reduce maximum jerk speeds mm/minute
+M203 X12000 Y12000 Z100 E1800  ; Reduce maximum speeds (mm/min)
+M566 X500 Y500 Z15 E10         ; Reduce maximum jerk speeds mm/minute
 
 M558 H10 F50 T3000 ; Z probe - slow and raise probe height.
                    ; H10 - dive height
