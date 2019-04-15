@@ -91,8 +91,16 @@ G31 X0 Y30 Z2.00 P500                   ; Set the zprobe height and threshold (p
 ;*** WARNING - Always test probe deploy/retract before homing Z
 ;*** WARNING - If polarity in deployprobe.g and retractprobe.g are wrong, you WILL have a head crash
 ;M307 H3 A-1 C-1 D-1
-;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02
+;M558 P9 X0 Y0 Z1 H5 T6000 A5 S0.02
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
+
+;Precision Piezo Orion config
+;*** The section is commented out with semi-colons and therefore deactivated.
+;*** If you have a Precision Piezo Orion, to activate remove the semi-colons (and comment out IR Probe/Switch section
+;*** otherwise leave commented out.
+;*** WARNING: This section has not been tested throughly yet, and is based off community input. Use at your own risk.
+;M558 P8 I1 H5 R0.75 Z1 T6000 A5 S0.005 ; Set Z probe type to switch and the dive height + speeds
+;G31 P500 X0 Y0 Z0 ; Set Z probe trigger value, offset and trigger height
 
 M208 S1 Z-0.2                           ; set minimum Z
 T0                                      ; select first hot end
