@@ -3,6 +3,13 @@
 ;Use-case : the machine may be Z-homed from any position at a reasonable pace, without resorting to dangerous options such as M564 H0 - while still retaining accuracy of the final probe.
 
 G91 G1 Z5 F800 S2 ; lift z so we don't crash
+
+;M280 P3 S160  ; Fix for BL-touch users - 
+               ; If the nozzle height is close to the bed at the time the routine is run the probe will not fully deploy
+               ; and BLTouch will enter an alarm state(flashing). In this state it will be non functional, but the Duet
+               ; has no way of knowing this. If you perform a Z home in this state you will get a nozzle crash, 
+               ; damage your BLTouch probe, and damage your print surface. 
+
 G90 G1 X150 Y150 F6000 ; Move to the center of the bed
 
 ; M558  Fxxx sets the probing speed.
