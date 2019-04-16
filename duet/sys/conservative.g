@@ -4,14 +4,13 @@
 ;           of crashing the head into the bed or anything else and to ensure there is a heater model before tuning.
 
 ; Axis and motor configuration - slow down.
-M201 X1500 Y1500 Z10 E500      ; Reduce accelerations (mm/s^2)
-M203 X12000 Y12000 Z450 E1800   ; Reduce maximum speeds (mm/min)
-M566 X500 Y500 Z15 E10        ; Reduce maximum jerk speeds mm/minute
+M906 X500 Y500 Z400 E700 I60 ; Reduce motor currents (mA) - WARNING: May trigger stallguard (and prematurely during homing) if sensorless.
+M201 X500 Y500 Z02 E500      ; Accelerations (mm/s^2)
+M203 X3000 Y3000 Z50 E1800   ; Maximum speeds (mm/min)
+M566 X200 Y200 Z5 E10        ; Maximum jerk speeds mm/minute
 
-M558 H10 F50 T3000 ; Z probe - slow and raise probe height.
+M558 H10           ; Z probe - raise probe height.
                    ; H10 - dive height
-                   ; F50 - probing speed
-                   ; T3000 - travel speed between probe points
                    ; A bigger dive height prevents a situation where the bed is out of alignment by more than the dive height
                    ; on any corner, which can crash the hot-end into the bed while moving the head in XY.
                    ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or

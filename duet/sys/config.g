@@ -2,7 +2,6 @@
 ; Debugging
 M111 S0                                 ; Debug off
 M929 P"eventlog.txt" S1                 ; Start logging to file eventlog.txt
-
 M550 P"RailCore"                        ; Machine name and Netbios name (can be anything you like)
 ;M551 P"myrap"                          ; Machine password (used for FTP)
 
@@ -16,7 +15,6 @@ M552 P0.0.0.0                           ; Use DHCP
 ; General preferences
 M555 P2                                 ; Set output to look like Marlin
 M575 P1 B57600 S1                       ; Comms parameters for PanelDue
-
 G21                                     ; Work in millimetres
 G90                                     ; Send absolute coordinates...
 M83                                     ; ...but relative extruder moves
@@ -58,7 +56,6 @@ M305 P0 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to
 M305 P1 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
 ;Heaters
-
 M570 S360                                  ; Print will be terminated if a heater fault is not reset within 360 minutes.
 M143 H0 S120                               ; Maximum H0 (Bed) heater temperature
 M143 H1 S285                               ; Maximum H1 (Extruder) heater temperature
@@ -74,7 +71,7 @@ M106 P2 S0
 ; Tool definitions
 M563 P0 D0 H1                           ; Define tool 0
 G10 P0 S0 R0                            ; Set tool 0 operating and standby temperatures
-;*** If you have a single-nozzle build, comment the next 2 lines
+;*** If you have a single-nozzle build, leave the next 2 lines commented out.
 ;M563 P1 D1 H2                          ; Define tool 1
 ;G10 P1 S0 R0 X0 Y17                    ; Set tool 1 operating and standby temperatures
 
@@ -95,8 +92,17 @@ G31 X0 Y30 Z2.00 P500                   ; Set the zprobe height and threshold (p
 ;*** WARNING - Always test probe deploy/retract before homing Z
 ;*** WARNING - If polarity in deployprobe.g and retractprobe.g are wrong, you WILL have a head crash
 ;M307 H3 A-1 C-1 D-1
-;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02
+;M558 P9 X0 Y0 Z1 H5 T6000 A5 S0.02
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
+
+
+;Precision Piezo Orion config
+;*** The section is commented out with semi-colons and therefore deactivated.
+;*** If you have a Precision Piezo Orion, to activate remove the semi-colons (and comment out IR Probe/Switch section
+;*** otherwise leave commented out.
+;*** WARNING: This section has not been tested throughly yet, and is based off community input. Use at your own risk.
+;M558 P8 I1 H5 R0.75 Z1 T6000 A5 S0.005 ; Set Z probe type to switch and the dive height + speeds
+;G31 P500 X0 Y0 Z0 ; Set Z probe trigger value, offset and trigger height
 
 T0                                      ; select first hot end
 
