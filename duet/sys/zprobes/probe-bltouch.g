@@ -2,6 +2,7 @@
 
 ;*** WARNING - Always test probe deploy/retract before homing Z
 ;*** WARNING - If polarity in deployprobe.g and retractprobe.g are wrong, you WILL have a head crash
+
 M307 H3 A-1 C-1 D-1      ; remaps some channels to make the PWM port on the duex5 work for a z-probe
                          ; if you use a different pwm port than the docs show, you have to change that
 M558 P9 X0 Y0 Z1 H5 T6000 A5 S0.02  ; P9 = probe type 9 - means it'll call the deploy & retract scripts when you trigger it to probe
