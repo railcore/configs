@@ -1,1 +1,0 @@
-G92 Z0 ;  to define that height as Z=0
