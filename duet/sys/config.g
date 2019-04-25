@@ -81,7 +81,7 @@ G10 P0 S0 R0                            ; Set tool 0 operating and standby tempe
 ;*** Do not use the Fxxx parameter for M558 in these files, as it is set in homez.g
 ;*** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
 
-M98 P"zprobe/ir.g"                       ; Run IR Probe configuration file.
+;M98 P"zprobe/ir.g"                      ; Run IR Probe configuration file.
 ;M98 P"zprobe/switch.g"                  ; Run Switch Probe configuration file. (untested/community submitted)
 ;M98 P"zprobe/bltouch.g"                 ; Run BLTouch configuration file.
 ;M98 P"zprobe/orion.g"                   ; Run Piezo Orion configuration file (untested/community submitted)
