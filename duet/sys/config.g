@@ -108,5 +108,5 @@ T0                                      ; select first hot end
 
 ; Conservative settings enabled during build and testing. When you are ready to remove this
 ; simple protection, remove or comment out this line
-; M98 P"conservative.g"
+M98 P"conservative.g"
 M501                                    ; Load saved parameters from non-volatile memory
