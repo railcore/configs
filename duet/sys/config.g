@@ -44,8 +44,9 @@ M201 X3000 Y3000 Z20 E1000              ; Accelerations (mm/s^2)
 M203 X24000 Y24000 Z900 E3600           ; Maximum speeds (mm/min)
 M566 X1000 Y1000 Z30 E20                ; Maximum jerk speeds mm/minute
 M92 X200 Y200 Z1600                     ; Steps/mm for X.Y & Z
-M92 E837                                ; Extruder - Titan Extruder Steps/mm
-;M92 E415                               ; Extruder - Bondtech BMG Steps/mm
+M92 E415                                ; Extruder - Bondtech BMG Steps/mm (Standard BMG pancake stepper 17HS10-0704S @ 1.8 deg/step)
+;M92 E837                               ; Extruder - Titan Extruder Steps/mm (Standard Titan stepper 42BYGHM208P4.5-15-X2 @ 0.9deg/step)
+
 
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
 ; These values are conservative to start with, adjust during commissioning.
