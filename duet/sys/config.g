@@ -80,36 +80,18 @@ G10 P0 S0 R0                            ; Set tool 0 operating and standby tempe
 
 ; Z probe and compensation definition
 
-;IR Probe or Switch
-;*** Comment this section out (or remove) if you are NOT using an IR Probe or Switch
-;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
-;*** Do not use the Fxxx parameter for M558 here, it is set in homez.g
-M558 P1 X0 Y0 Z1                        ; Z probe is an IR probe and is not used for homing any axes
-G31 X0 Y30 Z2.00 P500                   ; Set the zprobe height and threshold (put your own values here)
-                                        ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
+;*** Any file commented out with semi-colons is deactivated.
+;*** Do not use the Fxxx parameter for M558 in these files, as it is set in homez.g
+;*** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
 
-;BLTouch
-;*** The section is commented out with semi-colons and therefore deactivated.
-;*** If you have a BL-touch, to activate remove the semi-colons (and comment out IR Probe/Switch section
-;*** otherwise leave commented out
-;*** WARNING - Always test probe deploy/retract before homing Z
-;*** WARNING - If polarity in deployprobe.g and retractprobe.g are wrong, you WILL have a head crash
-;M307 H3 A-1 C-1 D-1
-;M558 P9 X0 Y0 Z1 H5 T6000 A5 S0.02
-;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
+;M98 P"zprobe/ir.g"                      ; Run IR Probe configuration file.
+;M98 P"zprobe/switch.g"                  ; Run Switch Probe configuration file. (untested/community submitted)
+;M98 P"zprobe/bltouch.g"                 ; Run BLTouch configuration file.
+;M98 P"zprobe/orion.g"                   ; Run Piezo Orion configuration file (untested/community submitted)
 
-
-;Precision Piezo Orion config
-;*** The section is commented out with semi-colons and therefore deactivated.
-;*** If you have a Precision Piezo Orion, to activate remove the semi-colons (and comment out IR Probe/Switch section
-;*** otherwise leave commented out.
-;*** WARNING: This section has not been tested throughly yet, and is based off community input. Use at your own risk.
-;M558 P8 I1 H5 R0.75 Z1 T6000 A5 S0.005 ; Set Z probe type to switch and the dive height + speeds
-;G31 P500 X0 Y0 Z0 ; Set Z probe trigger value, offset and trigger height
+; *** Conservative settings enabled during build and testing. When you are ready to remove this ***
+; *** simple protection, remove or comment out this line                                        ***
+M98 P"conservative.g"
 
 T0                                      ; select first hot end
-
-; Conservative settings enabled during build and testing. When you are ready to remove this
-; simple protection, remove or comment out this line
-M98 P"conservative.g"
 M501                                    ; Load saved parameters from non-volatile memory
