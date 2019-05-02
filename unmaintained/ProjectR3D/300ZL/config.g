@@ -41,8 +41,8 @@ M208 X0 Y0 Z-0.5 S1                 ; set axis minima and low homing switch posi
 M92 X200 Y200 Z1600 E837	    ; steps/mm, X/Y may be more around 201.5 for accuracy
 
 ; Thermistors
-M305 P0 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
-M305 P1 T100000 B4240 R4700 H0 L0	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
+M305 P0 T100000 B3950 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
+M305 P1 T100000 B4725 R4700 H0 L0	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
 
 M307 H1 A270.7 C90.4 D6.7 B0 S1.0	;Heater 1 model
