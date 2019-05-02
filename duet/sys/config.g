@@ -55,8 +55,8 @@ M208 X0:280 Y0:280 Z-0.2:280            ; 300ZL
 ; M208 X0:280 Y0:280 Z-0.2:580          ; 300ZLT
 
 ; Thermistors
-M305 P0 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to set the bed thermistor ADC correction
-M305 P1 T100000 B4240 R4700 H0 L0       ; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
+M305 P0 S"Bed" T100000 B3950 R4700 H0 L0          ; BOM thermistor values. Put your own H and/or L values here to set the bed thermistor ADC correction
+M305 P1 S"E0" T100000 B4725 C7.06e-8 R4700 H0 L0  ; E3D Semitec 104GT2 thermistor values. Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
 ;Heaters
 M570 S360                                  ; Print will be terminated if a heater fault is not reset within 360 minutes.
