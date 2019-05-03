@@ -47,12 +47,13 @@ M558 H10           ; Z probe - raise probe height.
                    ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
                    ; disconnects later after moving to a point) giving the user more time to stop.
 				   
-; Axis and motor configuration - slow down.
-M906 X1000 Y1000 Z1000 E700 I60         ; Set motor currents (mA)
-M201 X3000 Y3000 Z20 E1000              ; Accelerations (mm/s^2)
-M203 X24000 Y24000 Z900 E3600           ; Maximum speeds (mm/min)
-M566 X1000 Y1000 Z30 E20                ; Maximum jerk speeds mm/minute
-;M92 E837                               ; Extruder - Titan Extruder Steps/mm (Standard Titan stepper 42BYGHM208P4.5-15-X2 @ 0.9deg/step)
+; Axis and motor configuration - faster speeds, uncomment only when fully commissioned!
+;M906 X1000 Y1000 Z1000 E700 I60         ; Set motor currents (mA)
+;M201 X3000 Y3000 Z20 E1000              ; Accelerations (mm/s^2)
+;M203 X24000 Y24000 Z900 E3600           ; Maximum speeds (mm/min)
+;M566 X1000 Y1000 Z30 E20                ; Maximum jerk speeds mm/minute
+
+;M92 E837                                ; Extruder - Titan Extruder Steps/mm (Standard Titan stepper 42BYGHM208P4.5-15-X2 @ 0.9deg/step)
 
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
 ; M208 X0:250 Y0:250 Z-0.2:230          ; 250ZL

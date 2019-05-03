@@ -75,6 +75,6 @@ M106 P2 S0
 M563 P0 D0 H1                           ; Define tool 0
 G10 P0 S0 R0                            ; Set tool 0 operating and standby temperatures
 
-M98 P"config-user.g"                    ; Load custom user config
+; M98 P"config-user.g"                    ; Load custom user config
 
 M501                                    ; Load saved parameters from non-volatile memory
