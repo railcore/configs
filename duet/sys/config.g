@@ -42,7 +42,7 @@ M574 X1 Y1 Z0 S1                        ; Set homing switch configuration (x,y a
 M906 X1000 Y1000 Z1000 E700 I60         ; Set motor currents (mA)
 M201 X3000 Y3000 Z20 E1000              ; Accelerations (mm/s^2)
 M203 X24000 Y24000 Z900 E3600           ; Maximum speeds (mm/min)
-M566 X1000 Y1000 Z30 E20                ; Maximum jerk speeds mm/minute
+M566 X1000 Y1000 Z30 E1600              ; Maximum jerk speeds mm/minute
 M92 X200 Y200 Z1600                     ; Steps/mm for X.Y & Z
 M92 E415                                ; Extruder - Bondtech BMG Steps/mm (Standard BMG pancake stepper 17HS10-0704S @ 1.8 deg/step)
 ;M92 E837                               ; Extruder - Titan Extruder Steps/mm (Standard Titan stepper 42BYGHM208P4.5-15-X2 @ 0.9deg/step)
