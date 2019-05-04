@@ -1,4 +1,6 @@
-# Bl Touch Bed probing
+# BL-touch Touch Bed probing
+
+To use these scripts, place into the /sys directory.
 
 ## Deploying and retracting the probe
 *** WARNING - Always test probe deploy/retract before homing Z
