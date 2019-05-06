@@ -81,7 +81,7 @@ M558 H10 A1 T3000  S0.02 ; Z probe - raise probe height.
 						 ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
 						 ; disconnects later after moving to a point) giving the user more time to stop.
 
-M557 X50:250 Y50:250 S200 S200          ; Set Default Mesh (conservative)
+M557 X50:200 Y50:200 S150 S150          ; Set Default Mesh (conservative)
 
 M98 P"config-user.g"                    ; Load custom user config
 

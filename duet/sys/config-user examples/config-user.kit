@@ -29,6 +29,8 @@ M569 P3 S0                          ; Project R3D : Drive 3 goes backwards - Ext
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
 ;M208 X0:300 Y0:300 Z-0.2:330        ; 300ZL
 ;M208 X0:300 Y0:300 Z-0.2:610        ; 300ZLT
+;M557 X50:290 Y50:290 S240 S240      ; Set Default Mesh - NOTE: take probe offset into account 
+                                     ; E.G. If probe offset is 42 on Y, then Y50:290 will take the hotend to Y08 to Y248)
 
 ;Heaters
 M143 H0 S120                        ; Maximum H0 (Bed) heater temperature
@@ -37,5 +39,3 @@ M143 H0 S120                        ; Maximum H0 (Bed) heater temperature
 M563 P0 S"E3Dv6 Gold" D0 H1         ; Define tool 0 uses extruder 0, heater 1 
 G10 P0 X0 Y0 Z0                     ; Set tool 0 axis offsets
 M143 H1 S290                        ; Maximum H1 (Extruder) heater temperature (E3D requires 285C to change nozzle)
-
-M557 X50:290 Y50:290 S240 S240      ; Set Default Mesh
