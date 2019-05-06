@@ -1,0 +1,46 @@
+;File     : config-user.g for the Project R3D Kit
+;Effect   : Provides a custom configuration area for the Railcore user.
+;Use-case : By keeping any custom definitions in this file (such as Z probe attributes, axis minima/maxima and anything else that you wish to override in config.g
+;         : it will enable the user to easily keep track of their own changes to the default config, as well as provide a simple upgrade path for future Github releases.
+
+; Z probe and compensation definition
+; *** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
+; INSTRUCTIONS :    1) Uncomment your configuration lines
+					2) M558 *** Do not add the Fxxx parameter for M558 here, it is set in homez.g
+					3) G31 
+					; a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
+					; Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
+                    ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
+
+M558 P1                 ; IR probe Probing configuration          
+G31 X0 Y35 Z2.00 P500   ; IR probe Probing configuration
+
+M558 H5 A3 T6000        ; Set 5mm dive height, 3 probes and 6000 travel speed.
+
+; Axis and motor configuration - Faster speeds, so uncomment only when fully commissioned!
+M906 X1000 Y1000 Z1000 E700 I60     ; Set stock motor currents (mA)
+;M201 X3000 Y3000 Z20 E1000          ; Accelerations (mm/s^2)
+;M203 X24000 Y24000 Z900 E3600       ; Maximum speeds (mm/min)
+;M566 X1000 Y1000 Z1300 E20          ; Maximum jerk speeds mm/minute
+
+; Extruder
+;M92 E415                            ; Extruder - Bondtech BMG Steps/mm (Standard BMG pancake stepper 17HS10-0704S @ 1.8 deg/step)
+
+; Leadscrew motor configuration
+; M92 Z3200                          ; Steps/mm for Z - TR8*2 / 0.9 deg stepper 
+; M92 Z800                           ; Steps/mm for Z - TR8*4 / 1.8 deg stepper or TR8*8 / 0.9 deg stepper
+
+; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
+;M208 X0:250 Y0:250 Z-0.2:230        ; 250ZL
+;M208 X0:300 Y0:300 Z-0.2:330        ; 300ZL
+;M208 X0:300 Y0:300 Z-0.2:610        ; 300ZLT
+
+;Heaters
+M143 H0 S120                        ; Maximum H0 (Bed) heater temperature
+
+; Tool definition - E3D Gold
+M563 P0 S"E3Dv6 Gold" D0 H1        ; Define tool 0 uses extruder 0, heater 1 
+G10 P0 X0 Y0 Z0                    ; Set tool 0 axis offsets
+M143 H1 S290                       ; Maximum H1 (Extruder) heater temperature (E3D requires 285C to change nozzle)
+
+M557 X50:290 Y50:290 S240 S240     ; Set Default Mesh

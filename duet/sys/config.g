@@ -42,7 +42,7 @@ M203 X3000 Y3000 Z50 E1800              ; Maximum speeds (mm/min) - WARNING: Con
 M566 X200 Y200 Z5 E10                   ; Maximum jerk speeds mm/minute - WARNING: Conservative
 M92 X200 Y200 Z1600                     ; Steps/mm for X.Y
 M92 Z1600                               ; Steps/mm for Z - TR8*2 / 1.8 deg stepper or TR8*4 / 0.9 deg stepper
-M92 E415                                ; Extruder - Bondtech BMG Steps/mm (Standard BMG pancake stepper 17HS10-0704S @ 1.8 deg/step)
+M92 E837                                ; Extruder - Bondtech BMG Steps/mm 0.9 deg/step (ProjectR3D kit with E3D stepper MT-1701HSM140AE or Standard Titan stepper 42BYGHM208P4.5-15-X2) 
 
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
 ; These values are conservative to start with, adjust during commissioning.
@@ -54,8 +54,8 @@ M305 P1 S"E0" T100000 B4725 C7.06e-8 R4700 H0 L0  ; E3D Semitec 104GT2 thermisto
 
 ;Heaters
 M570 S360                                  ; Print will be terminated if a heater fault is not reset within 360 minutes.
-M143 H0 S120                               ; Maximum H0 (Bed) heater temperature
-M143 H1 S285                               ; Maximum H1 (Extruder) heater temperature
+M143 H0 S80                                ; Maximum H0 (Bed) heater temperature (Conservative)
+M143 H1 S230                               ; Maximum H1 (Extruder) heater temperature (Conservative and in case extruder has PTFE lining)
 
 ; Default heater model
 M307 H0 A270.7 C90.4 D6.7 B0 S1.0          ; Default Bed Heater Parameters, before tuning / if config-override.g is missing
@@ -70,8 +70,8 @@ M106 P1 S0
 M106 P2 S0
 
 ; Tool definitions
-M563 P0 S"config-user not set" D0 H1                           ; Define tool 0
-G10 P0 S0 R0                            ; Set tool 0 operating and standby temperatures
+M563 P0 S"config-user not set" D0 H1    ; Define tool 0
+G10 P0 S-273 R-273                      ; Set tool 0 operating and standby temperatures
 
 ; Z probe
 M558 H10 A1 T3000  S0.02 ; Z probe - raise probe height.
@@ -81,7 +81,7 @@ M558 H10 A1 T3000  S0.02 ; Z probe - raise probe height.
 						 ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
 						 ; disconnects later after moving to a point) giving the user more time to stop.
 
-M557 X50:250 Y50:250 S200 S200          ; Set Default Mesh
+M557 X50:250 Y50:250 S200 S200          ; Set Default Mesh (conservative)
 
 M98 P"config-user.g"                    ; Load custom user config
 
