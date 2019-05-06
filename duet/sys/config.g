@@ -42,11 +42,11 @@ M203 X3000 Y3000 Z50 E1800              ; Maximum speeds (mm/min) - WARNING: Con
 M566 X200 Y200 Z5 E10                   ; Maximum jerk speeds mm/minute - WARNING: Conservative
 M92 X200 Y200 Z1600                     ; Steps/mm for X.Y
 M92 Z1600                               ; Steps/mm for Z - TR8*2 / 1.8 deg stepper or TR8*4 / 0.9 deg stepper
-M92 E837                                ; Extruder - Bondtech BMG Steps/mm 0.9 deg/step (ProjectR3D kit with E3D stepper MT-1701HSM140AE or Standard Titan stepper 42BYGHM208P4.5-15-X2) 
+M92 E837                                ; Extruder - 0.9 deg/step (ProjectR3D kit with E3D stepper MT-1701HSM140AE or Standard Titan stepper 42BYGHM208P4.5-15-X2) 
 
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
 ; These values are conservative to start with, adjust during commissioning.
-M208 X0:280 Y0:280 Z-0.2:280            ; Conservative 300ZL
+M208 X0:250 Y0:250 Z-0.2:230        ; Conservative 300ZL/T settings (or 250ZL)
 
 ; Thermistors
 M305 P0 S"Bed" T100000 B3950 R4700 H0 L0          ; BOM thermistor values. Put your own H and/or L values here to set the bed thermistor ADC correction

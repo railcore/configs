@@ -1,6 +1,7 @@
 # BL-Touch Bed probing
 
-To use these scripts, place into the /sys directory.
+To enable your BL-touch probe:
+Place deployprobe.g and retractprobe.g into the /sys directory and put G and M codes from the example config-user file into your own config-user.g file.
 
 ## Deploying and retracting the probe
 *** WARNING - Always test probe deploy/retract before homing Z
@@ -9,4 +10,4 @@ To use these scripts, place into the /sys directory.
 
 If you have a BLtouch (a z probe that must be deployed before probing and retracted afterwards) use deployprobe.g and retractprobe.g to call the appropriate deploy and retract commands. These are called by M401 - Deploy z probe, M402 - Retract z probe.
 
-Note: If you do not have a Z probe that needs to deploy or retract then you must not have these files in the /sys/ directory
+NOTE: If you do not have a Z probe that needs to deploy or retract then you MUST NOT have these files in the /sys/ directory

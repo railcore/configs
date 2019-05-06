@@ -31,7 +31,6 @@ M906 X1000 Y1000 Z1000 E700 I60     ; Set stock motor currents (mA)
 ; M92 Z800                           ; Steps/mm for Z - TR8*4 / 1.8 deg stepper or TR8*8 / 0.9 deg stepper
 
 ; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
-;M208 X0:250 Y0:250 Z-0.2:230        ; 250ZL
 ;M208 X0:300 Y0:300 Z-0.2:330        ; 300ZL
 ;M208 X0:300 Y0:300 Z-0.2:610        ; 300ZLT
 
