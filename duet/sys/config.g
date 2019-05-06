@@ -1,6 +1,5 @@
-; Configuration file for RailcoreII 300ZL Printer
-; Intended practice is to keep this file as stock (which has conservative values for many items) and to make your custom additions or overrides in the config-user.g file
-; This allows for future upgrade by replacing this file, and then keeps your custom values.
+; Configuration file for RailcoreII 300ZL Series Printers
+; Do NOT change this file. All customizations should occur in config-user.g
 
 ; Debugging
 M111 S0                                 ; Debug off
@@ -71,17 +70,19 @@ M106 P1 S0
 M106 P2 S0
 
 ; Tool definitions
-M563 P0 D0 H1                           ; Define tool 0
+M563 P0 S"config-user not set" D0 H1                           ; Define tool 0
 G10 P0 S0 R0                            ; Set tool 0 operating and standby temperatures
 
 ; Z probe
-M558 H10 A1 T3000   ; Z probe - raise probe height.
-					; H10 - dive height
-					; A bigger dive height prevents a situation where the bed is out of alignment by more than the dive height
-					; on any corner, which can crash the hot-end into the bed while moving the head in XY.
-                    ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
-                    ; disconnects later after moving to a point) giving the user more time to stop.
+M558 H10 A1 T3000  S0.02 ; Z probe - raise probe height.
+						 ; H10 - dive height
+						 ; A bigger dive height prevents a situation where the bed is out of alignment by more than the dive height
+						 ; on any corner, which can crash the hot-end into the bed while moving the head in XY.
+						 ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
+						 ; disconnects later after moving to a point) giving the user more time to stop.
 
-; M98 P"config-user.g"                    ; Load custom user config
+M557 X50:250 Y50:250 S200 S200          ; Set Default Mesh
+
+M98 P"config-user.g"                    ; Load custom user config
 
 M501                                    ; Load saved parameters from non-volatile memory

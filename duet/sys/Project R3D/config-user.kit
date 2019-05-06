@@ -1,0 +1,37 @@
+;File     : config-user.g for the Project R3D Kit
+;Effect   : Provides a custom configuration area for the Railcore user.
+;Use-case : By keeping any custom definitions in this file (such as Z probe attributes, axis minima/maxima and anything else that you wish to override in config.g
+;         : it will enable the user to easily keep track of their own changes to the default config, as well as provide a simple upgrade path for future Github releases.
+
+; Z probe and compensation definition
+; *** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
+; INSTRUCTIONS :    1) Uncomment your configuration lines
+					2) M558 *** Do not add the Fxxx parameter for M558 here, it is set in homez.g
+					3) G31 
+					; a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
+					; Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
+                    ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
+
+M558 P9                             ; BL-touch 
+G31 X2 Y42 Z2.65 P25                ; BL-touch 
+M307 H3 A-1 C-1 D-1                 ; BL-touch : remaps some channels to make the PWM port on the Duex5 work for a Z-probe if you use a different PWM port than the docs show, you have to change that
+
+; Axis and motor configuration - Faster speeds, so uncomment only when fully commissioned!
+M906 X1400 Y1400 Z1000 E1250 I60    ; Set motor currents (mA)
+;M201 X3000 Y3000 Z20 E1000          ; Accelerations (mm/s^2)
+;M203 X24000 Y24000 Z900 E3600       ; Maximum speeds (mm/min)
+;M566 X1000 Y1000 Z1300 E20          ; Maximum jerk speeds mm/minute
+
+; Drives
+M569 P3 S0                          ; Project R3D : Drive 3 goes backwards - Extruder 
+
+; Extruder
+M92 E837                            ; Extruder - Bondtech BMG Steps/mm  (ProjectR3D kit with E3D stepper MT-1701HSM140AE @ 0.9 deg/step) 
+
+; Set axis minima:maxima switch positions (Adjust to suit your machine and to make X=0 and Y=0 the edges of the bed)
+;M208 X0:300 Y0:300 Z-0.2:330        ; 300ZL
+;M208 X0:300 Y0:300 Z-0.2:610        ; 300ZLT
+
+; Tool definition - E3D Gold
+M563 P0 S"E3Dv6 Gold" D0 H1         ; Define tool 0 uses extruder 0, heater 1 
+G10 P0 X0 Y0 Z0                     ; Set tool 0 axis offsets

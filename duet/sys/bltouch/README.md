@@ -1,4 +1,4 @@
-# BL-touch Touch Bed probing
+# BL-Touch Bed probing
 
 To use these scripts, place into the /sys directory.
 
