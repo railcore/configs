@@ -21,7 +21,7 @@ This bundle has been created by community members with the following goals in mi
  1. The "config-user.g" has many sections commented out by default. These sections are intended to be individually enabled, tested and modified as commissioning progresses, in a safe and controlled manner.
  1. Test macro(s) are available in order to test your build in a useful and standardised way during commissioning, in order to help pick up any build problems.
 
-## Usage instructions
+## Usage Instructions
 
 Create your own or use an existing "config-user.something" file to base your own on,and name it "config-user.g".
 Place this file in /sys to replace the existing one, which is there as a placeholder and warning system.
