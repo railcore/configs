@@ -16,13 +16,17 @@ The name of a macro file in the /macros folder should be the text that you want 
 By default the macros are listed in alphabetical order. You can change this by prefixing the macro names with one or more decimal digits followed by an underscore, for example:
 
 1_Off
+\
 2_Half On
+\
 3_On
 
 The full filename will be used when the macros are sorted to display them in order, but only the text after the underscore will be displayed on the button. So the above will display as:
 
 Off
+\
 Half On
+\
 On
 
 Note: versions of PanelDue prior to 1.20beta2 do not implement this feature.
