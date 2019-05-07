@@ -70,7 +70,7 @@ M106 P1 S0
 M106 P2 S0
 
 ; Tool definitions
-M563 P0 S"Tool 0" D0 H1                 ; Define tool 0
+M563 P0 D0 H1                 ; Define tool 0
 G10 P0 S-273 R-273                      ; Set tool 0 operating and standby temperatures
 
 ; Z probe
