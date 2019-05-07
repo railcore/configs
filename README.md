@@ -36,4 +36,4 @@ So be sure to read the Duet G-code documentation on any G or M code line you are
 
 Examples and standard files for kits and self-builders are available, and bundles for some items where extra files are required (such as the BL-touch)
 
-**The included config-user.g in the /sys directory is *not intended for use, and if run will stop your RailCore with a warning.**
+ **The included config-user.g in the /sys directory is not intended for use, and if run will stop your RailCore with a warning.**
