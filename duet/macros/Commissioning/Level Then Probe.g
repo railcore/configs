@@ -1,4 +1,4 @@
-;File     : TrueLevel Then Mesh Probe.g
+;File     : TrueLevel Then Probe.g
 ;Effect   : Homes, performs 3 bed-levelling routines and homes again.
 ;Use-case : Time-saving macro, in order to do a quick bed level and then measure to check rail alignment.
 G28 X Y
