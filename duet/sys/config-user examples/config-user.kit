@@ -10,7 +10,7 @@
 					3) G31 
 					; a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
 					; Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
-                    ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
+                                        ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
 
 M558 P9                             ; BL-touch 
 G31 X2 Y42 Z2.65 P25                ; BL-touch 
@@ -38,4 +38,4 @@ M143 H0 S120                        ; Maximum H0 (Bed) heater temperature
 ; Tool definition - E3D Gold
 M563 P0 S"E3Dv6 Gold" D0 H1         ; Define tool 0 uses extruder 0, heater 1 
 G10 P0 X0 Y0 Z0                     ; Set tool 0 axis offsets
-M143 H1 S290 ; Maximum H1 (Extruder) heater temperature (E3D requires 285C to change nozzle)
+M143 H1 S290                        ; Maximum H1 (Extruder) heater temperature (E3D requires 285C to change nozzle)
