@@ -56,6 +56,7 @@ M305 P1 S"E0" T100000 B4725 C7.06e-8 R4700 H0 L0  ; E3D Semitec 104GT2 thermisto
 M570 S360                                  ; Print will be terminated if a heater fault is not reset within 360 minutes.
 M143 H0 S80                                ; Maximum H0 (Bed) heater temperature (Conservative)
 M143 H1 S230                               ; Maximum H1 (Extruder) heater temperature (Conservative and in case extruder has PTFE lining)
+M140 S-273 R-273                           ; Standby and initial Temp for bed as "off" (-273 = "off")
 
 ; Default heater model
 M307 H0 A270.7 C90.4 D6.7 B0 S1.0          ; Default Bed Heater Parameters, before tuning / if config-override.g is missing
@@ -70,8 +71,8 @@ M106 P1 S0
 M106 P2 S0
 
 ; Tool definitions
-M563 P0 D0 H1                 ; Define tool 0
-G10 P0 S-273 R-273                      ; Set tool 0 operating and standby temperatures
+M563 P0 D0 H1                           ; Define tool 0
+G10 P0 S-273 R-273                      ; Set tool 0 operating and standby temperatures(-273 = "off")
 
 ; Z probe
 M558 H10 A1 T3000  S0.02 ; Z probe - raise probe height.
