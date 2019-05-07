@@ -1,3 +1,5 @@
+(delete this file from your macros directory)
+
 # Macros directory
 
 ## Setting macro files for common tasks overview
