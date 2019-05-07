@@ -1,9 +1,16 @@
-Config-user examples
+## Config-user examples
 
-This folder contains example files to enable your RailCore in various configurations.
+WARNING: The RailCore is a DIY project. Build safe, build smart and BE RESPONSIBLE.
+When in doubt, double check things. USE COMMON SENSE AND USE THESE CONFIG FILES AT YOUR OWN RISK.
 
-You can take a file, rename it to "config-user.g" and place it in /sys 
-Each config file has the bare minimum enabled to allow the RailCore to be operational, and many conservative values
+This folder contains example files to enable your RailCore fully in various configurations.
+
+Either create your own or take an existing file to base your config on,and name it "config-user.g".
+Place this file in /sys replacing the existing one.
+
+There are two special example files, one for the kit and one for self-builders. 
+Each config file enabled to allow the RailCore to be operational in this mode, and many conservative values
 will be inherited from the stock config.g
-To unleash your railcores speed, size or other features, test, measure and uncomment the various lines. 
+To override these and unleash your railcores speeds, size or features, then you must test, measure and uncomment the various lines, preferably individually.
+
 Read the Duet G-code documentation on any line you are unsure with.
