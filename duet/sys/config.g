@@ -75,12 +75,12 @@ M563 P0 D0 H1                           ; Define tool 0
 G10 P0 S-273 R-273                      ; Set tool 0 operating and standby temperatures(-273 = "off")
 
 ; Z probe
-M558 H10 A1 T3000  S0.02 ; Z probe - raise probe height.
-						 ; H10 - dive height
-						 ; A bigger dive height prevents a situation where the bed is out of alignment by more than the dive height
-						 ; on any corner, which can crash the hot-end into the bed while moving the head in XY.
-						 ; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
-						 ; disconnects later after moving to a point) giving the user more time to stop.
+M558 H10 A1 T3000  S0.02                ; Z probe - raise probe height.
+					; H10 - dive height
+					; A bigger dive height prevents a situation where the bed is out of alignment by more than the dive height
+					; on any corner, which can crash the hot-end into the bed while moving the head in XY.
+					; Probing speed and travel speed are similarly reduced in case the Z probe isn't connected properly (or
+					; disconnects later after moving to a point) giving the user more time to stop.
 
 M557 X50:200 Y50:200 S150 S150          ; Set Default Mesh (conservative)
 
