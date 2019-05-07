@@ -1,0 +1,7 @@
+; BL-touch config. 
+; Place into your config-user.g file to enable.
+
+; Z probe and compensation definition
+M558 P9                 ; BL-touch 
+G31 X2 Y42 Z2.65 P25    ; BL-touch 
+M307 H3 A-1 C-1 D-1     ; BL-touch : remaps some channels to make the PWM port on the Duex5 work for a Z-probe if you use a different PWM port than the docs show, you have to change that
