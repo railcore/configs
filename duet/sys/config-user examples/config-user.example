@@ -5,6 +5,7 @@
 ;         *** Uncomment any lines pertinent to your configuration and            ***
 ;         *** feel free to delete anything in here that you are not using.       ***
 ;         **************************************************************************
+
 ; Z probe and compensation definition
 ; *** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
 ; INSTRUCTIONS :   1) Uncomment your configuration lines
