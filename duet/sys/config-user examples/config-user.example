@@ -5,14 +5,15 @@
 ;         *** Uncomment any lines pertinent to your configuration and            ***
 ;         *** feel free to delete anything in here that you are not using.       ***
 ;         **************************************************************************
+
 ; Z probe and compensation definition
 ; *** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
-; INSTRUCTIONS :    1) Uncomment your configuration lines
-					2) M558 *** Do not add the Fxxx parameter for M558 here, it is set in homez.g
-					3) G31 
-					; a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
-					; Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
-                    ; Tip: A larger trigger height in G31 moves you CLOSER to the bed
+; INSTRUCTIONS :   1) Uncomment your configuration lines
+;                  2) M558 *** Do not add the Fxxx parameter for M558 here, it is set in homez.g
+;                  3) G31 configuration
+;                   a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
+;                   b) Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
+; c) Tip: A larger trigger height in G31 moves you CLOSER to the bed
 
 ;M558 P9                 ; BL-touch 
 ;G31 X2 Y42 Z2.65 P25    ; BL-touch 
@@ -56,7 +57,7 @@
 									; Tnnn Permitted temperature excursion from the setpoint for this heater (default 15C)
 
 ; Fans
-;M106 P0 S1 I0 F500 H1 T45               ; Set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned on
+;M106 P0 S1 I0 F500 H1 T45               ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned on
 
 ; Tool definitions
 ;*** If you have a dual-nozzle build, uncomment.
