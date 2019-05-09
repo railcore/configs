@@ -82,4 +82,4 @@ M28 /sys/config-user.bak ; Backup measure. Backup config-user.g to config-user.b
 ; Telnet
 ;M586 P2 S0                             ; Disable Telnet (default) S1 to enable
 
-M29                                     ; Close config-user.bak
+M29                                    ; Backup measure. Close config-user.bak
