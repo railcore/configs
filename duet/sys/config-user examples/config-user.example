@@ -6,6 +6,8 @@
 ;         *** feel free to delete anything in here that you are not using.       ***
 ;         **************************************************************************
 
+M28 /sys/config-user.bak ; Backup measure. Backup config-user.g to config-user.bak
+
 ; Z probe and compensation definition
 ; *** WARNING - **Always** make sure your cables are correct, secure and test them thoroughly before homing Z for the first times!
 ; INSTRUCTIONS :   1) Uncomment your configuration lines
@@ -79,3 +81,5 @@
 ;M551 P"myrap"                          ; Machine password (used for FTP)
 ; Telnet
 ;M586 P2 S0                             ; Disable Telnet (default) S1 to enable
+
+M29                                     ; Close config-user.bak
