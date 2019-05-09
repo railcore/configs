@@ -57,7 +57,7 @@
 									; Tnnn Permitted temperature excursion from the setpoint for this heater (default 15C)
 
 ; Fans
-;M106 P0 S1 I0 F500 H1 T45               ; Set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned on
+;M106 P0 S1 I0 F500 H1 T45               ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned on
 
 ; Tool definitions
 ;*** If you have a dual-nozzle build, uncomment.
