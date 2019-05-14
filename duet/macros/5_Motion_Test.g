@@ -7,9 +7,7 @@
 
 M84; disable motors to allow manual movement
 M291 R"Self Test" P"Slowly move print head near the center of the bed" S3
-G4 P500 ; workaround, see https://github.com/railcore/configs/pull/63
 M291 R"Self Test" P"Make sure the bed is well away from the nozzle" S3
-G4 P500 ; workaround, see https://github.com/railcore/configs/pull/63
 
 ; Test each x/y motor in isolation.  The S2 parameter makes each motor axis behave independently, not like a core-xy
 M291 R"Self Test" P"Rear X/Y motor will move clockwise" S3
