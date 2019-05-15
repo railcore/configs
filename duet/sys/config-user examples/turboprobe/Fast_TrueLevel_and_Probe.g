@@ -6,12 +6,14 @@
           
 M561                     ; Clear bed transforms
 M558 T18000 F500 H7.5    ; Match H to your M561 setting (normally 7.5mm). (T)ravel 18000 (F)Probe speed 500
+                         ; A large dive height will tolerate a very uneven bed or poor calibration
 
-G28 X Y                  ; You can further optimise by creating a homexy-nodrop.g with a single Z movement at the start and removing the following line.
 G91 G1 Z7.5 F800 S2      ; Lift Z so we don't crash. match M561 & M558 probe height 
+G28 X Y                  ; You can further optimise by creating a homexy-nodrop.g with a single Z movement at the start and removing the following line.
 
 ; #### 1) Home Z - First probe with largest offset possible and fast speed
-G90 G1 X150 Y150 F18000  ; Move to the center of the bed fast. (T)ravel 18000
+G90                      ; Absolute Positioning
+G1 X150 Y150 F18000      ; Move to the center of the bed fast. (T)ravel 18000
 G30                      ; Probe single Z at current location (fast). (T)ravel 18000 (F)Probe speed 150. (H)eight 7.5
 
 ; #### 2) Home Z - second slower probe
@@ -21,16 +23,19 @@ G30                      ; Probe single Z at current location (medium)
 M98 P"/sys/bed-nodrop.g" ; bed-nodrop.g is your bed.g with any G1 Z moves removed for speed.
 
 ; #### 3) Home Z - Small offset slow
-M558 H3.5                ; **** Set H to a dive height that you are comfortable with. 1mm more your typical probe height seems reasonable. ****
+M558 H3                  ; **** Set H to a dive height that you are comfortable with. ****
+                         ; Set to twice your typical probe height for safety, but you can set this down to 1mm for super-fast probing.
+                         ; the firmware moves the Z probe to this height above where it expects the bed to be before commencing probing. The maximum depth of probing from this position is
+                         ; twice the dive height. A small dive height will make probing faster, because the Z probe has less distance to travel before reaching the bed.
 M558 T15000 F50          ; (T)ravel 15000 (F)Probe speed 50
-G90 G1 X150 Y150 F15000  ; Move to the center of the bed (F)Travel speed 15000
+G1 X150 Y150 Z3 F15000   ; Move to the center of the bed (F)Travel speed 15000 , bring Z to 3 for first quick probe.
 G30                      ; Probe single Z at current location (slow). (H)eight from M558 above
 
 M98 P"/sys/bed-nodrop.g" ; bed-nodrop.g is your bed.g with any G1 Z moves removed for speed. (H)eight from M558 above
 
 ; #### 4) Home Z - Small offset slow
 M558 T12000              ; Slower speed probe  (T)ravel 12000. (
-G90 G1 X150 Y150 F12000  ; Move to the center of the bed. (F)Travel speed 12000
+G1 X150 Y150 F12000      ; Move to the center of the bed. (F)Travel speed 12000
 G30                      ; Probe single Z at current location (slow). (H)eight from M558 above
 
 M98 P"/sys/bed-nodrop.g" ; bed-nodrop.g is your bed.g with any G1 Z moves removed for speed.
