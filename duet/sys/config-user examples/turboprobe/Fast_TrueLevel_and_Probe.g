@@ -1,5 +1,5 @@
 ;File     : Fast_TrueLevel_and_Probe.g
-;Effect   : Homes, performs 3 bed-levelling routines and homes again.
+;Effect   : Homes, performs 3 bed-levelling routines and probes the bed for information (mesh comp. disabled afterwards)
 ;Use-case : Time-saving macro, in order to get the bed as level as possible and then measured to check rail alignment.
 ;NOTE     : you must create a bed-nodrop.g in your sys directory.Copy you bed.g and remove any G1 Z moves to save going up more and probing down.
           ; Alter the H heigh on the 3) Home Z to at least 1mm more than your typical probe height.
