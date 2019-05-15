@@ -79,3 +79,8 @@
 ;M551 P"myrap"                          ; Machine password (used for FTP)
 ; Telnet
 ;M586 P2 S0                             ; Disable Telnet (default) S1 to enable
+
+
+; M98 P"wifi.g"                     ; Run WiFi configuration file , only run wifi.g UNTIL YOU ARE CONNECTED AND THEN DELETE.  
+                                    ; As well as being a security hazard, writing the access point parameters to WiFi chip every
+                                    ; time you start the Duet may eventually wear out the flash memory.

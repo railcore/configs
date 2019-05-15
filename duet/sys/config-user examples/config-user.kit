@@ -40,3 +40,7 @@ M143 H0 S120                        ; Maximum H0 (Bed) heater temperature
 M563 P0 S"E3Dv6 Gold" D0 H1         ; Define tool 0 uses extruder 0, heater 1 
 G10 P0 X0 Y0 Z0                     ; Set tool 0 axis offsets
 M143 H1 S290                        ; Maximum H1 (Extruder) heater temperature (E3D requires 285C to change nozzle)
+
+; M98 P"wifi.g"                     ; Run WiFi configuration file , only run wifi.g UNTIL YOU ARE CONNECTED AND THEN DELETE.  
+                                    ; As well as being a security hazard, writing the access point parameters to WiFi chip every
+                                    ; time you start the Duet may eventually wear out the flash memory.
