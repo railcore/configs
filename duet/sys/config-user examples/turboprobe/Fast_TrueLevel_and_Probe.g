@@ -6,6 +6,7 @@
 M561                     ; Clear bed transforms
 M558 T18000 F500 H7.5    ; Match H to your M561 setting (normally 7.5mm). (T)ravel 18000 (F)Probe speed 500
 G28 X Y                  ; you can optimise this further by inserting code directly to home X & Y without lowering the bed in between.
+G91 G1 Z7.5 F800 S2      ; lift z so we don't crash. may as well match M561 & M558 probe height 
 
 ; 1) Home Z - Large offset fast speed
 G90 G1 X150 Y150 F18000 ; Move to the center of the bed fast
