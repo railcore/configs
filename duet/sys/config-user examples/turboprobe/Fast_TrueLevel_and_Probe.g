@@ -12,7 +12,7 @@ G90 G1 X150 Y150 F18000 ; Move to the center of the bed fast
 G30                     ; Probe single Z (at current location)
 
 ; 2) Home Z - Medium offset medium speed
-M558 H3 F150               ; change dive height for second dive, Medium probe setting (speed)
+M558 H3 F150            ; change dive height for second dive, Medium probe setting (speed)
 G30                     ; Probe single Z (at current location)
 
 M98 P"/sys/bed-nodrop.g" ; bed-nodrop.g is your bed.g with any G1 Z moves removed for speed.
@@ -26,7 +26,6 @@ M98 P"/sys/bed-nodrop.g" ; bed-nodrop.g is your bed.g with any G1 Z moves remove
 
 ; 4) Home Z - Small offset slow
 M558 T12000             ; change dive height for second dive , slow speed probe setting
-G30                     ; Probe single Z (at current location)
 G90 G1 X150 Y150 F12000 ; Move to the center of the bed
 G30                     ; Probe single Z
 
