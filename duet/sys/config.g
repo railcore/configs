@@ -6,7 +6,6 @@ M111 S0                                 ; Debug off
 M929 P"eventlog.txt" S1                 ; Start logging to file eventlog.txt
 M550 P"RailCore"                        ; Machine name and Netbios name (can be anything you like)
 
-M98 P"wifi.g"                           ; Run WiFi configuration file.
 M552 P0.0.0.0                           ; Use DHCP
 
 ; General preferences
