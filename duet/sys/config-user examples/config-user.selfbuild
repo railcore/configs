@@ -13,7 +13,7 @@
 ;                   c) Tip: A larger trigger height in G31 moves you CLOSER to the bed
 
 M558 P1                 ; IR probe Probing configuration          
-G31 X0 Y35 Z2.00 P500   ; IR probe Probing configuration
+G31 X0 Y35 Z0.00 P500   ; IR probe Probing configuration Z Offset set to 0, determine your own Z-Offset and enter it here (Note: Positive number is closer to the bed)
 
 M558 H5 A3 T6000        ; Set 5mm dive height, 3 probes and 6000 travel speed.
 
