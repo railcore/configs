@@ -9,7 +9,8 @@ M558 T18000 F500 H7.5    ; Match H to your M561 setting (normally 7.5mm). (T)rav
                          ; A large dive height will tolerate a very uneven bed or poor calibration
 
 G91 G1 Z7.5 F800 S2      ; Lift Z so we don't crash. match M561 & M558 probe height 
-G28 X Y                  ; You can further optimise by creating a homexy-nodrop.g with a single Z movement at the start and removing the following line.
+G28 X Y                  ; You can further optimise by creating a homexy-nodrop.g, calling it here and commenting out this line
+;M98 P"/sys/homexy-nodrop.g" ; your home X and Y scripts in one file with no Z raises or drops.
 
 ; #### 1) Home Z - First probe with largest offset possible and fast speed
 G90                      ; Absolute Positioning
