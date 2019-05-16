@@ -1,5 +1,4 @@
 ; Home Y & X START
-G91 G1 Z7.5 F800 S2       ; lift z so we don't crash. may as well match M561 & M558 probe height 
 ;Change currents for sensorless homing
 M400                    ; make sure everything has stopped before we make changes
 M913 X40 Y40            ; reduce motor current to 40% to prevent belts slipping
@@ -13,7 +12,7 @@ M400                    ; make sure everything has stopped before we make change
 M913 X100 Y100          ; motor currents back to normal
 M201 X3000 Y3000        ; accel back to original
 
-G91 G1 Y120 F18000      ; back off to between the Z extrusions for X sensorless (avoids E3D fan hitting them)
+G90 G1 Y120 F18000      ; back off to between the Z extrusions for X sensorless (avoids E3D fan hitting them)
 
 ;Change currents for sensorless homing
 M400                    ; make sure everything has stopped before we make changes
