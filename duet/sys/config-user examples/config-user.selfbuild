@@ -19,9 +19,9 @@ M558 H5 A3 T6000        ; Set 5mm dive height, 3 probes and 6000 travel speed.
 
 ; Axis and motor configuration - Faster speeds, so uncomment only when fully commissioned!
 M906 X1000 Y1000 Z1000 E700 I60     ; Set stock motor currents (mA)
-;M201 X3000 Y3000 Z20 E1000          ; Accelerations (mm/s^2)
+;M201 X3000 Y3000 Z20 E3000          ; Accelerations (mm/s^2)
 ;M203 X24000 Y24000 Z900 E3600       ; Maximum speeds (mm/min)
-;M566 X1000 Y1000 Z1300 E20          ; Maximum jerk speeds mm/minute
+;M566 X1000 Y1000 Z80 E3600          ; Maximum jerk speeds mm/minute
 
 ; Extruder
 ;M92 E415                            ; Extruder - Bondtech BMG Steps/mm (Standard BMG pancake stepper 17HS10-0704S @ 1.8 deg/step)
