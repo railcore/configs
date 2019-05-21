@@ -23,10 +23,10 @@
 ;G31 X0 Y35 Z0 P500      ; IR probe Probing configuration Z Offset set to 0, determine your own Z-Offset and enter it here (Note: Positive number is closer to the bed)
 
 ;M558 P8 I1 H3 R0.5 F350 ; Precision Piezo Orion v1.2 or v2.0(digital)
-;G31 X0 Y0 Z-0.10 P50
+;G31 X0 Y0 Z0 P50
 
 ;M558 P1 I1 H3 R0.1 F450 ; Precision Piezo Orion v2.0(analog)
-;G31 X0 Y0 Z-0.10 P480	 ; Your p-val is going to depend a lot on your particular setup.  Look at the z-probe resting value and add 10-20.
+;G31 X0 Y0 Z0 P480	 ; Your p-val is going to depend a lot on your particular setup.  Look at the z-probe resting value and add 10-20.
 			 ; e.g. - this value of 480 is based on a resting value of 465. The sensitivity of the tuning potentiometer and your mounting
 			 ; of the piezo may impact this.
 
