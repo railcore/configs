@@ -11,9 +11,9 @@
 ; INSTRUCTIONS :   1) Uncomment your configuration lines
 ;                  2) M558 *** Do not add the Fxxx parameter for M558 here, it is set in homez.g
 ;                  3) G31 configuration
-;                   a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
-;                   b) Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
-; c) Tip: A larger trigger height in G31 moves you CLOSER to the bed
+;                    a) Customize your offsets appropriately, where the probe is X Y is offset from the nozzle.
+;                    b) Z is the trigger height (how high your nozzle is from the bed when the probe triggers). You need to dial those in.
+;                    c) Tip: A larger trigger height in G31 moves you CLOSER to the bed
 
 ;M558 P9                 ; BL-touch 
 ;G31 X2 Y42 Z0 P25       ; BL-touch - Z Offset set to 0, determine your own Z-Offset and enter it here (Note: Positive number is closer to the bed)
@@ -22,14 +22,19 @@
 ;M558 P1                 ; IR probe Probing configuration          
 ;G31 X0 Y35 Z0 P500      ; IR probe Probing configuration Z Offset set to 0, determine your own Z-Offset and enter it here (Note: Positive number is closer to the bed)
 
-;M558 P8 I1 R0.75 S0.005 ; Orion *** WARNING: This section has not been tested throughly yet, and is based off community input. Use at your own risk.
-;G31 X0 Y0 Z0.00 P500    ; Orion Probing configuration
+;M558 P8 I1 H3 R0.5 F350 ; Precision Piezo Orion v1.2 or v2.0(digital)
+;G31 X0 Y0 Z-0.10 P50
+
+;M558 P1 I1 H3 R0.1 F450 ; Precision Piezo Orion v2.0(analog)
+;G31 X0 Y0 Z-0.10 P480	 ; Your p-val is going to depend a lot on your particular setup.  Look at the z-probe resting value and add 10-20.
+			 ; e.g. - this value of 480 is based on a resting value of 465. The sensitivity of the tuning potentiometer and your mounting
+			 ; of the piezo may impact this.
 
 ;M558 P4                 ; Switch Probing configuration
 ;G31 X0 Y30 Z0 P500      ; Switch Probing configuration Z Offset set to 0, determine your own Z-Offset and enter it here (Note: Positive number is closer to the bed)
 
 ; Drives
-;M569 P3 S0                              ; Project R3D : Drive 3 goes backwards - Extruder 
+;M569 P3 S0		 ; Project R3D : Drive 3 goes backwards - Extruder 
 
 ; Axis and motor configuration - Faster speeds, so uncomment only when fully commissioned!
 ;M906 X1000 Y1000 Z1000 E700 I60         ; Set stock motor currents (mA)
