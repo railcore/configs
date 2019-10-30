@@ -1,4 +1,4 @@
-; Filament sensor - for use with https://www.thingiverse.com/thing:3731171
+; #### Filament runout sensor - for use with https://www.thingiverse.com/thing:3731171
 ; D0 - Extruder 0
 ; P - Sensor type - 1=simple sensor (high signal when filament present)
 ; C - Which input the filament sensor is connected to. On Duet electronics: 3=E0 endstop input
