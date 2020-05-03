@@ -62,11 +62,15 @@ M307 H0 A270.7 C90.4 D6.7 B0 S1.0          ; Default Bed Heater Parameters, befo
 M307 H1 A508.1 C249.0 D3.8 S1.00 V24.2 B0  ; Default Tool Heater Parameters, before tuning / if config-override.g is missing
 
 ; Fans
-M106 P0 H-1                             ; Disable thermostatic mode for fan 0
-M106 P1 H-1                             ; Disable thermostatic mode for fan 1
+M106 P1 H-1                             ; Disable thermostatic mode for hotend fan. 
+;M106 P1 H1 T40 B0.1					; Enable thermostatic mode for hotend fan. (Optional) 
+
+M106 P0 H-1                             ; Disable thermostatic mode for parts cooling fan
 M106 P2 H-1                             ; Disable thermostatic mode for fan 2
-M106 P0 S0                              ; Turn off fans
-M106 P1 S0
+
+; Set default fan speeds
+M106 P1 S1								; Turn on hotend fan
+M106 P0 S0                              ; Turn off parts cooling fan(s)
 M106 P2 S0
 
 ; Tool definitions
