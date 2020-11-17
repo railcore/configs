@@ -7,4 +7,4 @@
 
 The "macro" folder contains a useful macros for RepRapFirmware Duet (Ethernet/Wifi) for the RailCore II 300ZL and 300ZLT.
 
-Ensure you using the correct RepRapFirmware flavour.
+Ensure you using the correct RepRapFirmware flavour and test any macros you import.
