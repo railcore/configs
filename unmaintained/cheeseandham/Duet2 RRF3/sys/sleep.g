@@ -1,0 +1,1 @@
+; If M1 is issued the firmware finishes any moves left in its buffer, then shuts down, the macro file sleep.g is run before all heaters and drives are turned off.
