@@ -28,9 +28,10 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
 
   ;#### Probe Y Axis
   G1 Y-350 F3000 H1                                        ; move X towards X0 and sense endstop
-  G1 Y4 F3000                                              ; back off enough to avoid hitting Z yokes.
+  G1 Y4 F3000                                              ; back off 
   G1 Y-6 F1000 H1                                          ; move X towards X0 and sense endstop
-
+  G1 Y100 F3000                                              ; back off enough to avoid hitting Z yokes.
+  
   ;#### Probe centre
   G90                                                      ; Absolute mode.
   G1 X{move.axes[0].max/2} Y{move.axes[1].max/2}-35 F99999 ; Move NOZZLE to the center of the bed
