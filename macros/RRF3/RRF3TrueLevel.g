@@ -22,15 +22,15 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   G91                                                      ; Relative mode.
   G1 Z15 F900 H2                                           ; Lower Z
   ;#### Probe Y Axis
-  G1 X350 F3000 H1                                         ; move X towards X0 and sense endstop
+  G1 Y-350 F3000 H1                                        ; move Y towards Y0 and sense endstop
+  G1 Y4 F3000                                              ; back off 
+  G1 Y-6 F1000 H1                                          ; move Y towards Y0 and sense endstop
+  G1 Y100 F3000 H1                                         ; move Y towards Y0 and sense endstop
+  
+  ;#### Probe X Axis
+  G1 X-350 F3000 H1                                        ; move X towards X0 and sense endstop
   G1 X-4 F3000                                             ; back off
   G1 X6 F1000 H1                                           ; move X towards X0 and sense endstop
-
-  ;#### Probe Y Axis
-  G1 Y-350 F3000 H1                                        ; move X towards X0 and sense endstop
-  G1 Y4 F3000                                              ; back off 
-  G1 Y-6 F1000 H1                                          ; move X towards X0 and sense endstop
-  G1 Y100 F3000                                              ; back off enough to avoid hitting Z yokes.
   
   ;#### Probe centre
   G90                                                      ; Absolute mode.
