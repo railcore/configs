@@ -13,11 +13,11 @@ M558 H15 A1                ; Set to twice your typical probe height for safety, 
 
 M561                       ; clear any existing bed transform
 
-;If the bed is "perfect" assume it needs relevelling, so disable XY so it needs to home and level.
+; #### If the bed is "perfect" assume it needs relevelling, so disable XY so it needs to home and level.
 if move.calibration.initial.deviation == 0  || move.calibration.initial.mean == 0  || move.calibration.final.deviation == 0  || move.calibration.final.mean == 0
   M84
 
-;If the printer hasn't been homed, home it
+; #### If the printer hasn't been homed, home it
 if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed 
   echo "You need to home and level, performing operation."
   G91                                                      ; Relative mode.
@@ -33,12 +33,12 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   G1 X-4 F3000                                             ; back off
   G1 X6 F1000 H1                                           ; move X towards X0 and sense endstop
   
-  ;#### Probe centre
+  ; #### Probe centre
   G90                                                      ; Absolute mode.
   G1 X{move.axes[0].max/2} Y{move.axes[1].max/2}-35 F99999 ; Move NOZZLE to the center of the bed
   G30                                                      ; Probe Z
 
-  ;#### Perform a mini-3 point probe. By just probing a tiny area, the chance of damaging the bed is reduced.
+  ; #### Perform a mini-3 point probe. By just probing a tiny area, the chance of damaging the bed is reduced.
   G30 P0 X130 Y130 Z-99999
   G30 P1 X130 Y170 Z-99999
   G30 P2 X175 Y150 Z-99999 S3
