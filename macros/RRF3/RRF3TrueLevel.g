@@ -22,13 +22,13 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   echo "You need to home and level, performing operation."
   G91                                                      ; Relative mode.
   G1 Z15 F900 H2                                           ; Lower Z
-  ;#### Probe Y Axis
+  ; #### Probe Y Axis
   G1 Y-350 F3000 H1                                        ; move Y towards Y0 and sense endstop
   G1 Y4 F3000                                              ; back off 
   G1 Y-6 F1000 H1                                          ; move Y towards Y0 and sense endstop
   G1 Y100 F3000 H1                                         ; move Y towards Y0 and sense endstop
   
-  ;#### Probe X Axis
+  ; #### Probe X Axis
   G1 X-350 F3000 H1                                        ; move X towards X0 and sense endstop
   G1 X-4 F3000                                             ; back off
   G1 X6 F1000 H1                                           ; move X towards X0 and sense endstop
@@ -43,7 +43,7 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   G30 P1 X130 Y170 Z-99999
   G30 P2 X175 Y150 Z-99999 S3
 
-; Assumes bed is homed and therefore reasonably level.
+; ### Assumes bed is homed and therefore reasonably level.
 M671 S7.5                                                  ; Custom M671 setting for leadscrew adjustment - S is the max correction in mm
 G30 P0 X70 Y70 Z-99999                                     ; Do at least one 3 Point G32 bed probe from larger probe height
 G30 P1 X70 Y245 Z-99999
