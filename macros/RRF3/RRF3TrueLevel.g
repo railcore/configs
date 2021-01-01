@@ -1,6 +1,7 @@
 ;File     : TrueLevel.g
 ;Effect   : Homes, and performs bed-levelling routines conditionally.
 ;Use-case : Time-saving macro, in order to get the bed as level as possible and homed.
+;THIS MACRO HAS A LOT OF TESTS. THE FIRST FEW TIMES MONITOR CLOSELY. READ THROUGH THIS MACRO AND USE AT YOUR OWN RISK.
 
 ; #### Start script
 M671 S15                   ; Custom M671 setting for leadscrew adjustment - S is the max correction in mm
@@ -42,6 +43,7 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   G30 P1 X130 Y170 Z-99999
   G30 P2 X175 Y150 Z-99999 S3
 
+; Assumes bed is homed and therefore reasonably level.
 M671 S7.5                                                  ; Custom M671 setting for leadscrew adjustment - S is the max correction in mm
 G30 P0 X70 Y70 Z-99999                                     ; Do at least one 3 Point G32 bed probe from larger probe height
 G30 P1 X70 Y245 Z-99999
