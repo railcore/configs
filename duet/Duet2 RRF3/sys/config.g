@@ -3,8 +3,7 @@
 M111 S0                             	; Debug off
 M550 PRailCore					; Machine name and Netbios name (can be anything you like)
 ;M551 Pmyrap                        	; Machine password (used for FTP)
-;*** If you have more than one Duet on your network, they must all have different MAC addresses, so change the last digits
-M540 P0xBE:0xEF:0xDE:0xAD:0xFE:0xEE 	; MAC Address
+
 ;*** Wifi Networking
 M552 S1								; Enable WiFi
 M555 P2                           	; Set output to look like Marlin
@@ -21,7 +20,7 @@ M584 X0 Y1 Z5:6:7 E3:4:8:9 		; Map Z to drivers 5, 6, 7. Define unused drivers 3
 M569 P0 S0                          ; Drive 0 goes forwards (change to S0 to reverse it) X stepper (Rear)
 M569 P1 S1                          ; Drive 1 goes backwards	Y Stepper (Front)
 M569 P2 S1                          ; Drive 2 goes forwards		Unused
-M569 P3 S0                          ; Drive 3 goes forwards		Extruder 
+M569 P3 S0                          ; Drive 3 goes forwards		Extruder
 M569 P4 S1                          ; Drive 4 goes forwards		Extruder (unused)
 M569 P5 S0							; Drive 5 goes backwards	Front Left Z
 M569 P6 S0							; Drive 6 goes backwards	Rear Left Z
@@ -71,7 +70,7 @@ M106 P2 H-1
 M106 P0 S0 				; turn off fans
 M106 P1 S0
 M106 P2 S0
-	
+
 ; Tool definitions
 M563 P0 D0 H1                       	; Define tool 0
 G10 P0 S0 R0                        	; Set tool 0 operating and standby temperatures
@@ -84,11 +83,11 @@ G10 P0 S0 R0                        	; Set tool 0 operating and standby temperat
 ; IR PRobe - uncomment the following 2 lines if you have a and IR Probe, and comment out the BLTouch section below
 ;RRF3 IR Probe only comment out: M558 P1 X0 Y0 Z1			; Z probe is an IR probe and is not used for homing any axes
 ;M558 P1 C"^zprobe.in" H5 F120 T6000 A5 S0.02  ; _RRF3_ IR Probe connected to Z probe IN pin
-;G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own values here) 
+;G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own values here)
 
 ;BLTouch - comment out the following 3 lines if using a IR Probe
 ;_RRF3_ comment out: M307 H3 A-1 C-1 D-1
-;_RRF3_ comment out: M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02  
+;_RRF3_ comment out: M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02
 M558 P9 C"^zprobe.in" H5 R1 F50 T6000 A5 S0.02  ; _RRF3_ BLTouch connected to Z probe IN pin
 M950 S0 C"duex.pwm1"				   ; _RRF3_ Define BLTouch Servo (S0) on duet pwm1
 G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately - do a paper test, and put the probed value in the Z value here

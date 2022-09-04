@@ -3,8 +3,7 @@
 M111 S0                             	; Debug off
 M550 PRailCore					; Machine name and Netbios name (can be anything you like)
 ;M551 Pmyrap                        	; Machine password (used for FTP)
-;*** If you have more than one Duet on your network, they must all have different MAC addresses, so change the last digits
-M540 P0xBE:0xEF:0xDE:0xAD:0xFE:0xEE 	; MAC Address
+
 ;*** Wifi Networking
 M552 S1								; Enable WiFi
 M555 P2                           	; Set output to look like Marlin
@@ -21,7 +20,7 @@ M584 X0 Y1 Z5:6:7 E3:4:8:9 		; Map Z to drivers 5, 6, 7. Define unused drivers 3
 M569 P0 S0                          ; Drive 0 goes forwards (change to S1 to reverse it) X stepper (Rear)
 M569 P1 S0                          ; Drive 1 goes backwards	Y Stepper (Front)
 M569 P2 S1                          ; Drive 2 goes forwards		Unused
-M569 P3 S1                          ; Drive 3 goes forwards		Extruder 
+M569 P3 S1                          ; Drive 3 goes forwards		Extruder
 M569 P4 S1                          ; Drive 4 goes forwards		Extruder (unused)
 M569 P5 S0							; Drive 5 goes backwards	Front Left Z
 M569 P6 S0							; Drive 6 goes backwards	Rear Left Z
@@ -44,7 +43,7 @@ M92 X200 Y200 Z1600 E837	    ; steps/mm, X/Y may be more around 201.5 for accura
 M305 P0 T100000 B3950 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
 M305 P1 T100000 B4725 R4700 H0 L0 C7.06e-8	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 
-M307 H0 A240.3 C608.7 D8.2 S1.00 V24.1 B0  ; Bed Heater 
+M307 H0 A240.3 C608.7 D8.2 S1.00 V24.1 B0  ; Bed Heater
 M307 H1 A270.7 C90.4 D6.7 B0 S1.0	;Heater 1 model
 M570 S360				; Hot end may be a little slow to heat up so allow it 180 seconds
 M143 S285
@@ -56,7 +55,7 @@ M106 P2 H-1
 M106 P0 S0 				; turn off fans
 M106 P1 S0
 M106 P2 S0
-	
+
 ; Tool definitions
 M563 P0 D0 H1                       	; Define tool 0
 G10 P0 S0 R0                        	; Set tool 0 operating and standby temperatures
@@ -67,11 +66,11 @@ G10 P0 S0 R0                        	; Set tool 0 operating and standby temperat
 ; Z probe and compensation definition
 ;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
 M558 P1 X0 Y0 Z1			; Z probe is an IR probe and is not used for homing any axes
-G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own values here) 
+G31 X0 Y30 Z2.00 P500			; Set the zprobe height and threshold (put your own values here)
 
 ;BLTouch - leave commented out if using a IR Probe
 ;M307 H3 A-1 C-1 D-1
-;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02  
+;M558 P9 X0 Y0 Z1 H5 F50 T6000 A5 S0.02
 ;G31 X2 Y42 Z2.65 P25 ; Customize your offsets appropriately.
 
 
