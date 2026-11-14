@@ -16,3 +16,7 @@ The configs are initially maintained by Kraegar on Dropbox and can be found at:-
  * [300ZL Duet 3 + SBC / RRF3](https://www.dropbox.com/sh/vpu1wd7kkqyabb2/AAAFGqPBm-Gtg7lRqB-g0NQMa?dl=0)
 
 Last sync: 31 Dec 2020
+
+## License
+
+The configuration files and macros in this repository are [MIT licensed](LICENSE). RailCore® designs and documentation are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); see [railcore/parts](https://github.com/railcore/parts) and [railcore.org](https://railcore.org).
