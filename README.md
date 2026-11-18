@@ -17,6 +17,10 @@ The configs are initially maintained by Kraegar on Dropbox and can be found at:-
 
 Last sync: 31 Dec 2020
 
+## Klipper Configurations
+
+The "klipper" folder has starting-point Klipper configs for the RailCore II 300ZL/ZLT (Duet 2 + Duex 5) and the RailCore Mini (Duet 3 Mini 5+), plus shared macros. Every value marked `CHECK:` must be verified on your machine. See [klipper/README.md](klipper/README.md) and [railcore.org/klipper](https://railcore.org/klipper/).
+
 ## License
 
 The configuration files and macros in this repository are [MIT licensed](LICENSE). RailCore® designs and documentation are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); see [railcore/parts](https://github.com/railcore/parts) and [railcore.org](https://railcore.org).
